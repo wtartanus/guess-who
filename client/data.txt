@@ -1,0 +1,75 @@
+[
+  {
+  "name": "harry potter",
+   "genre": "male",
+   "glasses": "true",
+   "scar": "true",
+   "house": "gryffindor",
+   "parents": "false",
+   "quidditch_player": "true",
+   "family_in_prison": "true",
+   "img": "http://i.dailymail.co.uk/i/pix/2014/07/09/article-2685410-0AE625D2000005DC-657_306x429.jpg"
+  },
+  {
+  "name": "lord voldemort",
+  "genre": "male",
+  "nose": "false",
+  "hair": "false",
+  "house": "slitherine",
+  "img": "http://cs10330.vk.me/u163808602/-6/x_1e2b3800.jpg"
+  },
+  {
+  "name": "albus dumbledore",
+  "genre": "male",
+  "glasses": "true",
+  "long_hiar": "true",
+  "family_in_prison": "true",
+  "beard": "true",
+  "img": "http://66.media.tumblr.com/tumblr_m61oxa4W3p1rrlv1l.jpg"
+  },
+  {
+  "name": "severus snape",
+  "genre": "male",
+  "house": "slitherine",
+  "alchemy_teacher": "true",
+  "img": "http://vignette4.wikia.nocookie.net/harrypotter/images/6/63/SnapeSeverus.jpg/revision/latest?cb=20160103201919"
+  },
+  {
+  "name": "draco malfoy",
+  "genre": "male",
+  "quidditch_player": "true",
+  "hair": "blond",
+  "house": "slitherine",
+  "img": "http://vignette4.wikia.nocookie.net/harrypotter/images/c/cf/Harry-Potter-The-Deathly-Hallows-Part-II.jpg/revision/latest/scale-to-width-down/250?cb=20150126194912&path-prefix=fi"
+  },
+  {
+  "name": "sirius black",
+  "genre": "male",
+  "long_hair": "true",
+  "mustache": "true",
+  "img": "http://vignette3.wikia.nocookie.net/moviemorgue/images/a/a2/Sirius_Black.jpg/revision/latest?cb=20131112161610"
+  },
+  {
+  "name": "cho chang",
+  "genre": "female",
+  "long_hair": "true",
+  "house": "ravenclaw",
+  "quidditch_player": "true",
+  "img": "http://vignette3.wikia.nocookie.net/harrypotter/images/c/ca/Cho-Chang-promo-cho-chang-22382815-1846-2560.jpg/revision/latest?cb=20140619023700"
+  },
+  {
+  "name": "bellatrix lestrange",
+  "genre": "female",
+  "long_hair": "true",
+  "house": "slytherine",
+  "img": "http://vignette3.wikia.nocookie.net/harrypotter/images/3/31/Bellatrix-promo-bellatrix-lestrange-28967562-470-627.jpg/revision/latest?cb=20140619032053"
+  }
+]
+
+
+
+
+
+
+
+

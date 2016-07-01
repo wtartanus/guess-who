@@ -48,11 +48,10 @@
 	
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(38);
+	var GuessBox = __webpack_require__(168);
 	
 	window.onload = function () {
-	  // ReactDOM.render(
-	  //   document.getElementById("app");
-	  //   );
+	  ReactDOM.render(React.createElement(GuessBox, null), document.getElementById("app"));
 	  console.log("App started");
 	};
 
@@ -20348,6 +20347,131 @@
 	var ReactMount = __webpack_require__(160);
 	
 	module.exports = ReactMount.renderSubtreeIntoContainer;
+
+/***/ },
+/* 168 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var CharacterHolders = __webpack_require__(169);
+	var HelpingQuestions = __webpack_require__(171);
+	var GuessWho = __webpack_require__(172);
+	
+	var GuessBox = React.createClass({
+	  displayName: 'GuessBox',
+	
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'h1',
+	        null,
+	        'Guess Box'
+	      ),
+	      React.createElement(CharacterHolders, null),
+	      React.createElement(HelpingQuestions, null),
+	      React.createElement(GuessWho, null)
+	    );
+	  }
+	});
+	
+	module.exports = GuessBox;
+
+/***/ },
+/* 169 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	var Character = __webpack_require__(170);
+	
+	var CharactersHolder = React.createClass({
+	  displayName: 'CharactersHolder',
+	
+	  render: function render() {
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'h2',
+	        null,
+	        'Characters Holder'
+	      ),
+	      React.createElement(Character, null)
+	    );
+	  }
+	});
+	
+	module.exports = CharactersHolder;
+
+/***/ },
+/* 170 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	
+	var Character = React.createClass({
+	  displayName: 'Character',
+	
+	  render: function render() {
+	    return React.createElement(
+	      'h3',
+	      null,
+	      'Character'
+	    );
+	  }
+	});
+	
+	module.exports = Character;
+
+/***/ },
+/* 171 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	
+	var HelpingQuestions = React.createClass({
+	  displayName: 'HelpingQuestions',
+	
+	  render: function render() {
+	    return React.createElement(
+	      'h2',
+	      null,
+	      'Helping Questions'
+	    );
+	  }
+	});
+	
+	module.exports = HelpingQuestions;
+
+/***/ },
+/* 172 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var React = __webpack_require__(1);
+	
+	var GuessWho = React.createClass({
+	  displayName: 'GuessWho',
+	
+	  render: function render() {
+	    return React.createElement(
+	      'h2',
+	      null,
+	      'Guess Who'
+	    );
+	  }
+	});
+	module.exports = GuessWho;
 
 /***/ }
 /******/ ]);
