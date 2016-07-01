@@ -20362,6 +20362,28 @@
 	var GuessBox = React.createClass({
 	  displayName: 'GuessBox',
 	
+	  getInitialState: function getInitialState() {
+	    return { data: [] };
+	  },
+	
+	  componentDidMount: function componentDidMount() {
+	    this.fetchData("magic");
+	  },
+	
+	  fetchData: function fetchData(collection) {
+	    var url = "http://localhost:3000/api/" + collection;
+	    var request = new XMLHttpRequest();
+	
+	    request.open("GET", url);
+	    request.onload = function () {
+	      if (request.status === 200) {
+	        var data = JSON.parse(request.responseText);
+	        this.setState({ data: data });
+	      }
+	    }.bind(this);
+	    request.send(null);
+	  },
+	
 	  render: function render() {
 	    return React.createElement(
 	      'div',
