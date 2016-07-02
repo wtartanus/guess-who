@@ -3,10 +3,12 @@ var Character = require('./Character.jsx');
 
 var CharactersHolder = React.createClass({
   render: function() {
+    var characters = this.props.characters.map(function(character) {
+      return <Character name={character.name} />;
+    });
     return (
       <div>
-        <h2>Characters Holder</h2>
-        <Character />
+        {characters}
       </div>
       )
   

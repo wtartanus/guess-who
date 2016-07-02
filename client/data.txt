@@ -1,10 +1,10 @@
 [
   {
   "name": "harry potter",
-   "genre": "male",
+   "male": "true",
    "glasses": "true",
    "scar": "true",
-   "house": "gryffindor",
+   "gryffindor": "true",
    "parents": "false",
    "quidditch_player": "true",
    "family_in_prison": "true",
@@ -12,15 +12,15 @@
   },
   {
   "name": "lord voldemort",
-  "genre": "male",
+  "male": "true",
   "nose": "false",
   "hair": "false",
-  "house": "slitherine",
+  "slitherine": "true",
   "img": "http://cs10330.vk.me/u163808602/-6/x_1e2b3800.jpg"
   },
   {
   "name": "albus dumbledore",
-  "genre": "male",
+  "male": "true",
   "glasses": "true",
   "long_hiar": "true",
   "family_in_prison": "true",
@@ -29,39 +29,39 @@
   },
   {
   "name": "severus snape",
-  "genre": "male",
-  "house": "slitherine",
+  "male": "true",
+  "slitherine": "true",
   "alchemy_teacher": "true",
   "img": "http://vignette4.wikia.nocookie.net/harrypotter/images/6/63/SnapeSeverus.jpg/revision/latest?cb=20160103201919"
   },
   {
   "name": "draco malfoy",
-  "genre": "male",
+  "male": "true",
   "quidditch_player": "true",
-  "hair": "blond",
-  "house": "slitherine",
+  "hair_blond": "true",
+  "slitherine": "true",
   "img": "http://vignette4.wikia.nocookie.net/harrypotter/images/c/cf/Harry-Potter-The-Deathly-Hallows-Part-II.jpg/revision/latest/scale-to-width-down/250?cb=20150126194912&path-prefix=fi"
   },
   {
   "name": "sirius black",
-  "genre": "male",
+  "male": "true",
   "long_hair": "true",
   "mustache": "true",
   "img": "http://vignette3.wikia.nocookie.net/moviemorgue/images/a/a2/Sirius_Black.jpg/revision/latest?cb=20131112161610"
   },
   {
   "name": "cho chang",
-  "genre": "female",
+  "male": "false",
   "long_hair": "true",
-  "house": "ravenclaw",
+  "ravenclaw": "true",
   "quidditch_player": "true",
   "img": "http://vignette3.wikia.nocookie.net/harrypotter/images/c/ca/Cho-Chang-promo-cho-chang-22382815-1846-2560.jpg/revision/latest?cb=20140619023700"
   },
   {
   "name": "bellatrix lestrange",
-  "genre": "female",
+  "male": "false",
   "long_hair": "true",
-  "house": "slytherine",
+  "slytherine": "true",
   "img": "http://vignette3.wikia.nocookie.net/harrypotter/images/3/31/Bellatrix-promo-bellatrix-lestrange-28967562-470-627.jpg/revision/latest?cb=20140619032053"
   }
 ]

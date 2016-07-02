@@ -20355,7 +20355,7 @@
 	'use strict';
 	
 	var React = __webpack_require__(1);
-	var CharacterHolders = __webpack_require__(169);
+	var CharacterHolder = __webpack_require__(169);
 	var HelpingQuestions = __webpack_require__(171);
 	var GuessWho = __webpack_require__(172);
 	
@@ -20363,7 +20363,7 @@
 	  displayName: 'GuessBox',
 	
 	  getInitialState: function getInitialState() {
-	    return { data: [] };
+	    return { data: [], choosen: {} };
 	  },
 	
 	  componentDidMount: function componentDidMount() {
@@ -20379,6 +20379,9 @@
 	      if (request.status === 200) {
 	        var data = JSON.parse(request.responseText);
 	        this.setState({ data: data });
+	        var len = data.length;
+	        var num = Math.floor(Math.random() * len) + 1;
+	        this.setState({ choosen: data[num] });
 	      }
 	    }.bind(this);
 	    request.send(null);
@@ -20393,9 +20396,9 @@
 	        null,
 	        'Guess Box'
 	      ),
-	      React.createElement(CharacterHolders, null),
-	      React.createElement(HelpingQuestions, null),
-	      React.createElement(GuessWho, null)
+	      React.createElement(CharacterHolder, { characters: this.state.data }),
+	      React.createElement(HelpingQuestions, { character: this.state.choosen }),
+	      React.createElement(GuessWho, { characters: this.state.data })
 	    );
 	  }
 	});
@@ -20415,15 +20418,13 @@
 	  displayName: 'CharactersHolder',
 	
 	  render: function render() {
+	    var characters = this.props.characters.map(function (character) {
+	      return React.createElement(Character, { name: character.name });
+	    });
 	    return React.createElement(
 	      'div',
 	      null,
-	      React.createElement(
-	        'h2',
-	        null,
-	        'Characters Holder'
-	      ),
-	      React.createElement(Character, null)
+	      characters
 	    );
 	  }
 	});
@@ -20445,7 +20446,7 @@
 	    return React.createElement(
 	      'h3',
 	      null,
-	      'Character'
+	      this.props.name
 	    );
 	  }
 	});
@@ -20456,18 +20457,70 @@
 /* 171 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	var React = __webpack_require__(1);
 	
 	var HelpingQuestions = React.createClass({
-	  displayName: 'HelpingQuestions',
+	  displayName: "HelpingQuestions",
+	
+	  getInitialState: function getInitialState() {
+	    return { answer: "false" };
+	  },
+	
+	  handleChange: function handleChange(e) {
+	    e.preventDefault();
+	    console.log(e.target.value);
+	    if (this.props.character[e.target.value] === "true") {
+	      this.setState({ answer: "true" });
+	    } else {
+	      this.setState({ answer: "false" });
+	    }
+	  },
 	
 	  render: function render() {
 	    return React.createElement(
-	      'h2',
+	      "div",
 	      null,
-	      'Helping Questions'
+	      React.createElement(
+	        "select",
+	        { onChange: this.handleChange },
+	        React.createElement(
+	          "option",
+	          { value: "family_in_prison" },
+	          "Someone from family were in azkaban"
+	        ),
+	        React.createElement(
+	          "option",
+	          { value: "quidditch_player" },
+	          "Quidditch Player?"
+	        ),
+	        React.createElement(
+	          "option",
+	          { value: "long_hair" },
+	          "Have long hair?"
+	        ),
+	        React.createElement(
+	          "option",
+	          { value: "glasses" },
+	          "Have glasses?"
+	        ),
+	        React.createElement(
+	          "option",
+	          { value: "male" },
+	          "Is a men"
+	        ),
+	        React.createElement(
+	          "option",
+	          { value: "slytherine" },
+	          "House of slitherine?"
+	        )
+	      ),
+	      React.createElement(
+	        "p",
+	        { id: "helping-answer" },
+	        this.state.answer
+	      )
 	    );
 	  }
 	});
@@ -20486,10 +20539,17 @@
 	  displayName: 'GuessWho',
 	
 	  render: function render() {
+	    var names = this.props.characters.map(function (character) {
+	      return React.createElement(
+	        'option',
+	        { value: character.name },
+	        character.name
+	      );
+	    });
 	    return React.createElement(
-	      'h2',
+	      'select',
 	      null,
-	      'Guess Who'
+	      names
 	    );
 	  }
 	});

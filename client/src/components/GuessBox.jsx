@@ -1,11 +1,11 @@
 var React = require('react');
-var CharacterHolders = require('./CharactersHolder.jsx');
+var CharacterHolder = require('./CharactersHolder.jsx');
 var HelpingQuestions = require('./HelpingQuestions.jsx');
 var GuessWho = require('./GuessWho.jsx');
 
 var GuessBox = React.createClass({
   getInitialState: function() {
-    return { data: [] }
+    return { data: [], choosen: {}}
   },
 
   componentDidMount: function() {
@@ -21,6 +21,9 @@ var GuessBox = React.createClass({
       if(request.status === 200 ) {
         var data = JSON.parse(request.responseText);
         this.setState({data: data});
+        var len = data.length;
+        var num = Math.floor(Math.random() * len ) + 1;
+        this.setState({choosen: data[num]});
       }
     }.bind(this);
     request.send(null);
@@ -30,9 +33,9 @@ var GuessBox = React.createClass({
     return (
       <div>
         <h1>Guess Box</h1>
-        <CharacterHolders />
-        <HelpingQuestions />
-        <GuessWho />
+        <CharacterHolder characters={this.state.data}/>
+        <HelpingQuestions character={this.state.choosen}/>
+        <GuessWho characters={this.state.data}/>
       </div>
       )
     
