@@ -20433,7 +20433,7 @@
 	
 	  render: function render() {
 	    var characters = this.props.characters.map(function (character) {
-	      return React.createElement(Character, { name: character.name });
+	      return React.createElement(Character, { name: character.name, img: character.img });
 	    });
 	    return React.createElement(
 	      'div',
@@ -20449,17 +20449,19 @@
 /* 170 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	var React = __webpack_require__(1);
 	
 	var Character = React.createClass({
-	  displayName: 'Character',
+	  displayName: "Character",
+	
 	
 	  render: function render() {
 	    return React.createElement(
-	      'h3',
-	      null,
+	      "h3",
+	      { id: this.props.name, className: "character" },
+	      React.createElement("img", { src: this.props.img }),
 	      this.props.name
 	    );
 	  }
