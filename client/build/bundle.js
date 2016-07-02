@@ -20363,7 +20363,7 @@
 	  displayName: 'GuessBox',
 	
 	  getInitialState: function getInitialState() {
-	    return { data: [], choosen: {} };
+	    return { data: [], choosen: {}, answer: "Wrong" };
 	  },
 	
 	  componentDidMount: function componentDidMount() {
@@ -20380,11 +20380,20 @@
 	        var data = JSON.parse(request.responseText);
 	        this.setState({ data: data });
 	        var len = data.length;
-	        var num = Math.floor(Math.random() * len) + 1;
+	        var num = Math.floor(Math.random() * len);
+	        console.log(num);
 	        this.setState({ choosen: data[num] });
 	      }
 	    }.bind(this);
 	    request.send(null);
+	  },
+	
+	  checkIfCorrect: function checkIfCorrect(answer) {
+	    if (this.state.choosen.name === answer) {
+	      this.setState({ answer: "Correct" });
+	    } else {
+	      this.setState({ answer: "Wrong" });
+	    }
 	  },
 	
 	  render: function render() {
@@ -20398,7 +20407,12 @@
 	      ),
 	      React.createElement(CharacterHolder, { characters: this.state.data }),
 	      React.createElement(HelpingQuestions, { character: this.state.choosen }),
-	      React.createElement(GuessWho, { characters: this.state.data })
+	      React.createElement(GuessWho, { characters: this.state.data, checkIfCorrect: this.checkIfCorrect }),
+	      React.createElement(
+	        'p',
+	        null,
+	        this.state.answer
+	      )
 	    );
 	  }
 	});
@@ -20538,6 +20552,11 @@
 	var GuessWho = React.createClass({
 	  displayName: 'GuessWho',
 	
+	  handleChange: function handleChange(e) {
+	    e.preventDefault();
+	    this.props.checkIfCorrect(e.target.value);
+	  },
+	
 	  render: function render() {
 	    var names = this.props.characters.map(function (character) {
 	      return React.createElement(
@@ -20548,7 +20567,7 @@
 	    });
 	    return React.createElement(
 	      'select',
-	      null,
+	      { onChange: this.handleChange },
 	      names
 	    );
 	  }

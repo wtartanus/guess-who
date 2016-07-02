@@ -5,7 +5,7 @@ var GuessWho = require('./GuessWho.jsx');
 
 var GuessBox = React.createClass({
   getInitialState: function() {
-    return { data: [], choosen: {}}
+    return { data: [], choosen: {}, answer: "Wrong"}
   },
 
   componentDidMount: function() {
@@ -22,11 +22,20 @@ var GuessBox = React.createClass({
         var data = JSON.parse(request.responseText);
         this.setState({data: data});
         var len = data.length;
-        var num = Math.floor(Math.random() * len ) + 1;
+        var num = Math.floor(Math.random() * len );
+        console.log(num);
         this.setState({choosen: data[num]});
       }
     }.bind(this);
     request.send(null);
+  },
+
+  checkIfCorrect: function(answer) {
+   if(this.state.choosen.name === answer ) {
+     this.setState({answer: "Correct"})
+   } else {
+    this.setState({ answer: "Wrong"})
+   }
   },
 
   render: function() {
@@ -35,7 +44,8 @@ var GuessBox = React.createClass({
         <h1>Guess Box</h1>
         <CharacterHolder characters={this.state.data}/>
         <HelpingQuestions character={this.state.choosen}/>
-        <GuessWho characters={this.state.data}/>
+        <GuessWho characters={this.state.data} checkIfCorrect={this.checkIfCorrect}/>
+        <p>{this.state.answer}</p>
       </div>
       )
     
