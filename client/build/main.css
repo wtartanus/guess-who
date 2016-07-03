@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #00B259;
+}
+
+.guess-box {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 50%;
+  font-family: 'Slackey', cursive;
+  font-size: 5em;
+  color: red;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  text-shadow: 0 1px 0 blue, 
+               0 2px 0 blue,
+               0 3px 0 blue,
+               0 4px 0 blue,
+               0 5px 0 blue,
+               0 6px 1px rgba(0,0,0,.1),
+               0 0 5px rgba(0,0,0,.1),
+               0 1px 3px rgba(0,0,0,.3),
+               0 3px 5px rgba(0,0,0,.2),
+               0 5px 10px rgba(0,0,0,.25),
+               0 10px 10px rgba(0,0,0,.2),
+               0 20px 20px rgba(0,0,0,.15);
+}
+
+.characters-holder {
+  text-align: center;
+  height: 500px;
+  width: 63%;
+  padding: 0;
+  display: inline-block;
+}
+
+.character {
+  display: inline-block;
+}
+
+
+.character {
+  width: 170px;
+  height: 200px;
+  border-radius: 5px 5px 5px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,.1);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 5px;
+  position: relative;
+  z-index: 100;
+  
+}
+
+.questions-holder {
+  border: 1px solid green;
+  width: 25%;
+  float: right;
+  margin-right: 75px;
+  margin-top: 100px;
+}
+
+.animate-character {
+  z-index: -3000;
+  -webkit-animation-name: example; /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 4s; /* Chrome, Safari, Opera */
+     animation-name: example;
+     animation-duration: .9s;
+  transform: perspective( 600px ) rotateY( 60deg );
+  width: 160px;
+}
+
+
+@keyframes example {
+    0%   {transform: perspective( 600px ) rotateY( 160deg );}
+      10%  {transform: perspective( 600px ) rotateY( -160deg );}
+      20%  {transform: perspective( 600px ) rotateY( 160deg );}
+      30%  {transform: perspective( 600px ) rotateY( -160deg );}
+      40% {transform: perspective( 600px ) rotateY( 160deg );}
+
+      50%   {transform: perspective( 600px ) rotateY( -160deg );}
+        60% {transform: perspective( 600px ) rotateY( 160deg );}
+        70%  {transform: perspective( 600px ) rotateY( -160deg );}
+        90%  {transform: perspective( 600px ) rotateY( 160deg );}
+        100% {transform: perspective( 600px ) rotateY( -160deg );}
+}
+
+
+
+
+
+
+
+
+

@@ -7,7 +7,7 @@ var CharactersHolder = React.createClass({
       return <Character name={character.name} img={character.img} />;
     });
     return (
-      <div>
+      <div className="characters-holder">
         {characters}
       </div>
       )

@@ -20399,19 +20399,23 @@
 	  render: function render() {
 	    return React.createElement(
 	      'div',
-	      null,
+	      { className: 'guess-box' },
 	      React.createElement(
 	        'h1',
-	        null,
-	        'Guess Box'
+	        { className: 'logo' },
+	        'Guess Who?'
 	      ),
 	      React.createElement(CharacterHolder, { characters: this.state.data }),
-	      React.createElement(HelpingQuestions, { character: this.state.choosen }),
-	      React.createElement(GuessWho, { characters: this.state.data, checkIfCorrect: this.checkIfCorrect }),
 	      React.createElement(
-	        'p',
-	        null,
-	        this.state.answer
+	        'div',
+	        { className: 'questions-holder' },
+	        React.createElement(HelpingQuestions, { character: this.state.choosen }),
+	        React.createElement(GuessWho, { characters: this.state.data, checkIfCorrect: this.checkIfCorrect }),
+	        React.createElement(
+	          'p',
+	          null,
+	          this.state.answer
+	        )
 	      )
 	    );
 	  }
@@ -20437,7 +20441,7 @@
 	    });
 	    return React.createElement(
 	      'div',
-	      null,
+	      { className: 'characters-holder' },
 	      characters
 	    );
 	  }
@@ -20456,12 +20460,23 @@
 	var Character = React.createClass({
 	  displayName: "Character",
 	
+	  componentDidMount: function componentDidMount() {
+	    var element = document.getElementById(this.props.name);
+	    element.style.backgroundImage = "url(" + this.props.img + ")";
+	  },
+	
+	  handleClick: function handleClick() {
+	    var element = document.getElementById(this.props.name);
+	    element.classList.add("animate-character");
+	    setInterval(function () {
+	      element.style.visibility = "hidden";
+	    }, 900);
+	  },
 	
 	  render: function render() {
 	    return React.createElement(
 	      "h3",
-	      { id: this.props.name, className: "character" },
-	      React.createElement("img", { src: this.props.img }),
+	      { id: this.props.name, className: "character", onClick: this.handleClick },
 	      this.props.name
 	    );
 	  }

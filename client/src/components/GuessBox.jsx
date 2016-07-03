@@ -40,12 +40,14 @@ var GuessBox = React.createClass({
 
   render: function() {
     return (
-      <div>
-        <h1>Guess Box</h1>
+      <div className="guess-box">
+        <h1 className="logo">Guess Who?</h1>
         <CharacterHolder characters={this.state.data}/>
-        <HelpingQuestions character={this.state.choosen}/>
-        <GuessWho characters={this.state.data} checkIfCorrect={this.checkIfCorrect}/>
-        <p>{this.state.answer}</p>
+        <div className="questions-holder">
+          <HelpingQuestions character={this.state.choosen}/>
+          <GuessWho characters={this.state.data} checkIfCorrect={this.checkIfCorrect}/>
+          <p>{this.state.answer}</p>
+        </div>
       </div>
       )
     
