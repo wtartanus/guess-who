@@ -25,7 +25,7 @@ var HelpingQuestions = React.createClass({
          <option value="long_hair">Have long hair?</option>
          <option value="glasses">Have glasses?</option>
          <option value="male">Is a men</option>
-         <option value="slytherine">House of slitherine?</option>
+         <option value="slitherine">House of slitherine?</option>
         </select>
         <p id="helping-answer">{this.state.answer}</p>
     </div>

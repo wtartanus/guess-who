@@ -79,17 +79,17 @@ body {
 
 
 @keyframes example {
-    0%   {transform: perspective( 600px ) rotateY( 160deg );}
-      10%  {transform: perspective( 600px ) rotateY( -160deg );}
-      20%  {transform: perspective( 600px ) rotateY( 160deg );}
-      30%  {transform: perspective( 600px ) rotateY( -160deg );}
-      40% {transform: perspective( 600px ) rotateY( 160deg );}
+    0%   {transform: perspective( 600px ) rotateY( 160deg ); width:170px; height: 200px;}
+      10%  {transform: perspective( 600px ) rotateY( -160deg ); width:160px; height: 190px;}
+      20%  {transform: perspective( 600px ) rotateY( 160deg ); width:150px; height: 180px;}
+      30%  {transform: perspective( 600px ) rotateY( -160deg ); width:140px; height: 170px;}
+      40% {transform: perspective( 600px ) rotateY( 160deg ); width:130px; height: 160px;}
 
-      50%   {transform: perspective( 600px ) rotateY( -160deg );}
-        60% {transform: perspective( 600px ) rotateY( 160deg );}
-        70%  {transform: perspective( 600px ) rotateY( -160deg );}
-        90%  {transform: perspective( 600px ) rotateY( 160deg );}
-        100% {transform: perspective( 600px ) rotateY( -160deg );}
+      50%   {transform: perspective( 600px ) rotateY( -160deg ); width:120px; height: 150px;}
+        60% {transform: perspective( 600px ) rotateY( 160deg ); width:110px; height: 140px;}
+        70%  {transform: perspective( 600px ) rotateY( -160deg ); width:100px; height: 130px;}
+        90%  {transform: perspective( 600px ) rotateY( 160deg ); width:90px; height: 120px;}
+        100% {transform: perspective( 600px ) rotateY( -160deg ); width:80px; height: 110px;}
 }
 
 
